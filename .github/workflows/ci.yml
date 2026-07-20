@@ -5,6 +5,19 @@ on:
   pull_request:
 
 jobs:
+  compatibility:
+    name: jq 1.7.1 differential corpus
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - shell: pwsh
+        run: .\tools\fetch-reference-jq.ps1
+      - shell: pwsh
+        run: |
+          $env:JQ_REFERENCE = (Resolve-Path .\tools\reference\jq-1.7.1-windows-amd64.exe).Path
+          cargo test --test differential -- --nocapture
+
   test:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.runner }}

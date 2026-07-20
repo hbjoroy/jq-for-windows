@@ -67,7 +67,15 @@ This is an early but working implementation. It currently supports:
 
 ## Differential compatibility testing
 
-The integration corpus in `tests/differential.rs` evaluates the same filters and JSON values with this crate and an upstream jq executable, then compares the resulting JSON streams structurally. Set `JQ_REFERENCE` to the path of jq when it is not available on `PATH`:
+The versioned corpus in `corpus/cases.json` is generated deterministically by idiomatic Rust code. The integration test evaluates every filter and JSON value with both this crate and upstream jq, then compares the resulting JSON streams structurally. The current corpus contains 172 successful-stream cases across 15 language categories; all 172 match jq 1.7.1. This is evidence for the covered surface, not yet a claim of 100% compatibility with all of jq.
+
+Regenerate the public corpus after changing its families:
+
+```shell
+cargo run --example generate-corpus
+```
+
+The test independently checks corpus schema, minimum size, required metadata, and unique IDs. Set `JQ_REFERENCE` to the path of jq when it is not available on `PATH`:
 
 ```powershell
 $env:JQ_REFERENCE = 'C:\tools\jq.exe'
@@ -84,7 +92,7 @@ cargo test --test differential -- --nocapture
 
 The helper downloads the official jq 1.7.1 release from the jq GitHub repository and verifies SHA-256 `7451FBBF37FEFFB9BF262BD97C54F0DA558C63F0748E64152DD87B0A07B6D6AB`. The executable is ignored by Git.
 
-The test reports a skip when no reference executable is available. CI and compatibility reports should provide a pinned jq version so a missing reference cannot be mistaken for measured compatibility.
+The differential comparison reports a skip when no reference executable is available, while corpus-integrity checks still run. A dedicated CI job downloads and verifies the pinned reference so a missing executable cannot be mistaken for measured compatibility.
 
 ## Build
 
