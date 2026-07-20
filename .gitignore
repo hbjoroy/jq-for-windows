@@ -1,0 +1,3 @@
+/target/
+*.pdb
+/tools/reference/*.exe

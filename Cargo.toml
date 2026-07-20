@@ -1,0 +1,21 @@
+[package]
+name = "jq-for-windows"
+version = "0.1.0"
+edition = "2024"
+description = "An independent, Windows-native jq-compatible JSON processor"
+license = "MIT"
+repository = "https://github.com/harald/jq-for-windows"
+
+[[bin]]
+name = "jq"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = { version = "1.0", features = ["preserve_order"] }
+base64 = "0.22"
+percent-encoding = "2.3"
+regex = "1.11"
+
+[profile.release]
+lto = "thin"
+strip = true
