@@ -2,9 +2,9 @@
 name = "jq-for-windows"
 version = "0.1.0"
 edition = "2024"
-description = "An independent, Windows-native jq-compatible JSON processor"
+description = "An independent, cross-platform jq-compatible JSON processor in Rust"
 license = "MIT"
-repository = "https://github.com/harald/jq-for-windows"
+repository = "https://github.com/hbjoroy/jq-for-windows"
 
 [[bin]]
 name = "jq"

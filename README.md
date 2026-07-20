@@ -1,12 +1,14 @@
 # jq-for-windows
 
-An independent, memory-safe implementation of the `jq` command-line JSON processor in Rust, designed to feel native on Windows x64 and ARM64.
+An independent, memory-safe implementation of the `jq` command-line JSON processor in Rust for Windows, Linux, and macOS on x64 and ARM64.
 
 The project aims for **95% practical compatibility** with jq 1.7: the commonly used language, command-line interface, output, errors, and exit behaviour. Compatibility is measured by black-box tests against an installed upstream `jq`; it is not based on copied source code.
 
 ## Why this project exists
 
-`jq` is one of those rare tools that is both small at the command line and remarkably deep as a language. This project is an expression of respect for that design. Our goal is to make jq-compatible JSON processing feel first-class on Windows, while learning from the language and independently rebuilding its observable behaviour in modern, idiomatic Rust.
+`jq` is one of those rare tools that is both small at the command line and remarkably deep as a language. This project is an expression of respect for that design. It began from a desire to make jq-compatible JSON processing feel first-class on Windows, but the implementation is deliberately platform-agnostic and now targets Windows, Linux, and macOS while independently rebuilding jq's observable behaviour in modern, idiomatic Rust.
+
+The repository keeps the name `jq-for-windows` as part of that origin story. Windows is the reason the project started, not a restriction on where it should run.
 
 Compatibility here means respecting the contract that jq users rely on: filters produce streams, pipes preserve that model, function arguments are filters, updates operate through paths, and errors and exit behaviour matter. It does not mean copying jq's implementation or pretending that two very different languages should have identical internals.
 
@@ -86,12 +88,19 @@ The test reports a skip when no reference executable is available. CI and compat
 
 ## Build
 
-```powershell
+```shell
 cargo build --release
-'{"user":{"name":"Ada"}}' | target\release\jq.exe -r '.user | .name'
+echo '{"user":{"name":"Ada"}}' | target/release/jq -r '.user | .name'
 ```
 
-Rust's `x86_64-pc-windows-msvc` and `aarch64-pc-windows-msvc` targets are the primary release targets.
+On Windows PowerShell, the release binary is `target\release\jq.exe`. CI checks and builds these six Rust targets:
+
+- `x86_64-pc-windows-msvc`
+- `aarch64-pc-windows-msvc`
+- `x86_64-unknown-linux-gnu`
+- `aarch64-unknown-linux-gnu`
+- `x86_64-apple-darwin`
+- `aarch64-apple-darwin`
 
 ## Compatibility roadmap
 

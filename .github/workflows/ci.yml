@@ -6,18 +6,42 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.runner }}
     strategy:
+      fail-fast: false
       matrix:
-        target:
-          - x86_64-pc-windows-msvc
-          - aarch64-pc-windows-msvc
+        include:
+          - name: Windows x64
+            runner: windows-latest
+            target: x86_64-pc-windows-msvc
+            test: true
+          - name: Windows ARM64
+            runner: windows-latest
+            target: aarch64-pc-windows-msvc
+            test: false
+          - name: Linux x64
+            runner: ubuntu-24.04
+            target: x86_64-unknown-linux-gnu
+            test: true
+          - name: Linux ARM64
+            runner: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+            test: true
+          - name: macOS x64
+            runner: macos-15-intel
+            target: x86_64-apple-darwin
+            test: true
+          - name: macOS ARM64
+            runner: macos-15
+            target: aarch64-apple-darwin
+            test: true
     steps:
       - uses: actions/checkout@v6
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
       - run: cargo check --all-targets --target ${{ matrix.target }}
-      - if: matrix.target == 'x86_64-pc-windows-msvc'
+      - if: matrix.test
         run: cargo test --target ${{ matrix.target }}
       - run: cargo build --release --target ${{ matrix.target }}
