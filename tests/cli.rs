@@ -64,6 +64,18 @@ fn raw_slurp_and_file_input_are_supported() {
 }
 
 #[test]
+fn raw_lines_follow_platform_jq_crlf_semantics() {
+    let output = run_with_input(&["-R", "-c", "."], "one\r\ntwo\r\n");
+    assert!(output.status.success());
+    let expected = if cfg!(windows) {
+        "\"one\"\n\"two\"\n"
+    } else {
+        "\"one\\r\"\n\"two\\r\"\n"
+    };
+    assert_eq!(String::from_utf8(output.stdout).unwrap(), expected);
+}
+
+#[test]
 fn exit_status_distinguishes_false_and_empty_streams() {
     let false_output = run_with_input(&["-e", ".ok"], "{\"ok\":false}");
     assert_eq!(false_output.status.code(), Some(1));

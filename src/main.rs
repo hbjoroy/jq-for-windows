@@ -133,8 +133,15 @@ fn read_inputs(options: &CliOptions) -> Result<Vec<Value>, CliError> {
             return Ok(vec![Value::String(combined)]);
         }
         return Ok(combined
-            .lines()
-            .map(|line| Value::String(line.trim_end_matches('\r').to_owned()))
+            .split_terminator('\n')
+            .map(|line| {
+                let line = if cfg!(windows) {
+                    line.strip_suffix('\r').unwrap_or(line)
+                } else {
+                    line
+                };
+                Value::String(line.to_owned())
+            })
             .collect());
     }
 
