@@ -67,9 +67,11 @@ This is an early but working implementation. It currently supports:
 
 ## Differential compatibility testing
 
-The versioned corpus in `corpus/cases.json` is generated deterministically by idiomatic Rust code. The integration tests run every case with both this crate and upstream jq. Successful JSON streams are compared structurally; error cases compare rejection and whether failure happens during compilation or evaluation; CLI cases compare normalized stdout, stderr presence, and exit status.
+The versioned corpus in `corpus/cases.json` is generated deterministically by idiomatic Rust code. The integration tests run every case with both this crate and upstream jq. Successful JSON streams are compared structurally; error cases require both implementations to reject the program and record our classified failure phase; CLI cases compare normalized stdout, stderr presence, and exit status.
 
 The current corpus contains 182 language cases across 16 categories—173 successful streams and 9 errors—plus 14 CLI cases. All match jq 1.7.1. This is evidence for the covered surface, not yet a claim of 100% compatibility with all of jq.
+
+The public [jq 1.7.1 compatibility matrix](docs/compatibility.md) inventories language syntax, built-ins, format filters and command-line behaviour as supported, partial or missing. Status is tied to test evidence; raw builtin counts are deliberately not presented as the compatibility percentage.
 
 Regenerate the public corpus after changing its families:
 
