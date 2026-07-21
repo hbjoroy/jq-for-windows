@@ -10,7 +10,7 @@ fn corpus() -> Value {
 #[test]
 fn generated_corpus_has_valid_metadata_and_unique_ids() {
     let corpus = corpus();
-    assert_eq!(corpus["schema"], 1);
+    assert_eq!(corpus["schema"], 2);
     assert_eq!(corpus["reference"], "jq-1.7.1");
     let cases = corpus["cases"].as_array().unwrap();
     assert!(cases.len() >= 100, "corpus unexpectedly shrank");
@@ -20,7 +20,16 @@ fn generated_corpus_has_valid_metadata_and_unique_ids() {
         assert!(ids.insert(id), "duplicate corpus id: {id}");
         assert!(case["category"].is_string(), "missing category for {id}");
         assert!(case["filter"].is_string(), "missing filter for {id}");
+        assert!(case["outcome"].is_string(), "missing outcome for {id}");
         assert!(case.get("input").is_some(), "missing input for {id}");
+    }
+    let cli_cases = corpus["cli_cases"].as_array().unwrap();
+    assert!(cli_cases.len() >= 10, "CLI corpus unexpectedly shrank");
+    for case in cli_cases {
+        let id = case["id"].as_str().unwrap();
+        assert!(ids.insert(id), "duplicate corpus id: {id}");
+        assert!(case["args"].is_array(), "missing arguments for {id}");
+        assert!(case["stdin"].is_string(), "missing stdin for {id}");
     }
 }
 
@@ -48,7 +57,11 @@ fn compatibility_corpus_matches_reference_jq_when_available() {
         let filter = case["filter"].as_str().unwrap();
         let input_value = case["input"].clone();
         *categories.entry(category).or_default() += 1;
-        let ours = evaluate(&compile(filter).unwrap(), &input_value).unwrap();
+        let ours = compile(filter)
+            .map_err(|error| ("compilation", error.to_string()))
+            .and_then(|filter| {
+                evaluate(&filter, &input_value).map_err(|error| ("evaluation", error.to_string()))
+            });
         let mut child = Command::new(&reference)
             .args(["-c", filter])
             .stdin(Stdio::piped())
@@ -62,18 +75,38 @@ fn compatibility_corpus_matches_reference_jq_when_available() {
             .write_all(serde_json::to_string(&input_value).unwrap().as_bytes())
             .unwrap();
         let output = child.wait_with_output().unwrap();
-        assert!(
-            output.status.success(),
-            "reference jq rejected {id}: {filter}"
-        );
-        let reference_values = serde_json::Deserializer::from_slice(&output.stdout)
-            .into_iter()
-            .collect::<Result<Vec<Value>, _>>()
-            .unwrap();
-        assert_eq!(
-            ours, reference_values,
-            "differential mismatch for {id}: {filter}"
-        );
+        match case["outcome"].as_str().unwrap() {
+            "values" => {
+                assert!(
+                    output.status.success(),
+                    "reference jq rejected {id}: {filter}"
+                );
+                let reference_values = serde_json::Deserializer::from_slice(&output.stdout)
+                    .into_iter()
+                    .collect::<Result<Vec<Value>, _>>()
+                    .unwrap();
+                assert_eq!(
+                    ours.unwrap(),
+                    reference_values,
+                    "differential mismatch for {id}: {filter}"
+                );
+            }
+            "error" => {
+                assert!(
+                    !output.status.success(),
+                    "reference jq unexpectedly accepted {id}: {filter}"
+                );
+                let (phase, _) = ours.expect_err(&format!(
+                    "our implementation unexpectedly accepted {id}: {filter}"
+                ));
+                assert_eq!(
+                    phase,
+                    case["phase"].as_str().unwrap(),
+                    "error phase mismatch for {id}"
+                );
+            }
+            outcome => panic!("unknown outcome {outcome} for {id}"),
+        }
     }
 
     eprintln!(

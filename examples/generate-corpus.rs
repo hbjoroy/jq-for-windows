@@ -2,7 +2,17 @@ use serde_json::{Value, json};
 use std::path::PathBuf;
 
 fn case(id: impl Into<String>, category: &str, input: Value, filter: impl Into<String>) -> Value {
-    json!({"id": id.into(), "category": category, "input": input, "filter": filter.into()})
+    json!({"id": id.into(), "category": category, "input": input, "filter": filter.into(), "outcome": "values"})
+}
+
+fn error_case(
+    id: impl Into<String>,
+    category: &str,
+    input: Value,
+    filter: impl Into<String>,
+    phase: &str,
+) -> Value {
+    json!({"id": id.into(), "category": category, "input": input, "filter": filter.into(), "outcome": "error", "phase": phase})
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -170,8 +180,91 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         cases.push(case(format!("length-{id}"), "types", value, "length"));
     }
 
+    cases.extend([
+        error_case(
+            "error-division-zero",
+            "errors",
+            Value::Null,
+            "1 / 0",
+            "evaluation",
+        ),
+        error_case(
+            "error-iterate-number",
+            "errors",
+            json!(1),
+            ".[]",
+            "evaluation",
+        ),
+        error_case(
+            "error-length-boolean",
+            "errors",
+            json!(true),
+            "length",
+            "evaluation",
+        ),
+        error_case(
+            "error-keys-boolean",
+            "errors",
+            json!(false),
+            "keys",
+            "evaluation",
+        ),
+        case(
+            "flatten-object-values",
+            "collections",
+            json!({"a": 1}),
+            "flatten",
+        ),
+        error_case(
+            "error-fromjson",
+            "errors",
+            json!("not json"),
+            "fromjson",
+            "evaluation",
+        ),
+        error_case(
+            "error-explicit",
+            "errors",
+            Value::Null,
+            r#"error("boom")"#,
+            "evaluation",
+        ),
+        error_case(
+            "error-undefined-variable",
+            "errors",
+            Value::Null,
+            "$missing",
+            "evaluation",
+        ),
+        error_case(
+            "error-invalid-regex",
+            "errors",
+            json!("abc"),
+            r#"test("[")"#,
+            "evaluation",
+        ),
+        error_case("error-parse", "errors", Value::Null, ". +", "compilation"),
+    ]);
+
     cases.sort_by(|a, b| a["id"].as_str().cmp(&b["id"].as_str()));
-    let document = json!({"schema": 1, "reference": "jq-1.7.1", "cases": cases});
+    let cli_cases = vec![
+        json!({"id":"cli-compact", "category":"output", "args":["-c", "."], "stdin":"{\"a\":[1,2]}"}),
+        json!({"id":"cli-raw-output", "category":"output", "args":["-r", ".name"], "stdin":"{\"name\":\"Ada\"}"}),
+        json!({"id":"cli-json-stream", "category":"input", "args":["-c", "."], "stdin":"1\n2\nfalse\n"}),
+        json!({"id":"cli-slurp", "category":"input", "args":["-s", "-c", "."], "stdin":"1\n2\n3\n"}),
+        json!({"id":"cli-raw-lines", "category":"input", "args":["-R", "-c", "."], "stdin":"one\r\ntwo\r\n"}),
+        json!({"id":"cli-raw-slurp", "category":"input", "args":["-R", "-s", "-c", "."], "stdin":"one\ntwo\n"}),
+        json!({"id":"cli-null-input", "category":"input", "args":["-n", "-c", "{answer: 42}"], "stdin":""}),
+        json!({"id":"cli-arg", "category":"variables", "args":["-n", "-c", "--arg", "name", "Ada", "$name"], "stdin":""}),
+        json!({"id":"cli-argjson", "category":"variables", "args":["-n", "-c", "--argjson", "n", "42", "$n + 1"], "stdin":""}),
+        json!({"id":"cli-exit-true", "category":"exit-status", "args":["-e", ".ok"], "stdin":"{\"ok\":true}"}),
+        json!({"id":"cli-exit-false", "category":"exit-status", "args":["-e", ".ok"], "stdin":"{\"ok\":false}"}),
+        json!({"id":"cli-exit-empty", "category":"exit-status", "args":["-e", "empty"], "stdin":"null"}),
+        json!({"id":"cli-invalid-json", "category":"errors", "args":["."], "stdin":"{"}),
+        json!({"id":"cli-runtime-error", "category":"errors", "args":[".[]"], "stdin":"1"}),
+    ];
+    let document =
+        json!({"schema": 2, "reference": "jq-1.7.1", "cases": cases, "cli_cases": cli_cases});
     let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("corpus/cases.json");
     std::fs::create_dir_all(path.parent().unwrap())?;
     std::fs::write(

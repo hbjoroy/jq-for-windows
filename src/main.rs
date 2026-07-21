@@ -144,7 +144,7 @@ fn read_inputs(options: &CliOptions) -> Result<Vec<Value>, CliError> {
             serde_json::Deserializer::from_str(&source)
                 .into_iter()
                 .collect::<Result<Vec<_>, _>>()
-                .map_err(|error| CliError::new(format!("parse error: {error}"), 4))?,
+                .map_err(|error| CliError::new(format!("parse error: {error}"), 5))?,
         );
     }
     Ok(if options.slurp {

@@ -1,390 +1,454 @@
 {
-  "schema": 1,
+  "schema": 2,
   "reference": "jq-1.7.1",
   "cases": [
     {
       "id": "add--1--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + -1"
+      "filter": "-1 + -1",
+      "outcome": "values"
     },
     {
       "id": "add--1--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + -2"
+      "filter": "-1 + -2",
+      "outcome": "values"
     },
     {
       "id": "add--1--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + -3"
+      "filter": "-1 + -3",
+      "outcome": "values"
     },
     {
       "id": "add--1-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + 0"
+      "filter": "-1 + 0",
+      "outcome": "values"
     },
     {
       "id": "add--1-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + 1"
+      "filter": "-1 + 1",
+      "outcome": "values"
     },
     {
       "id": "add--1-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + 2"
+      "filter": "-1 + 2",
+      "outcome": "values"
     },
     {
       "id": "add--1-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-1 + 3"
+      "filter": "-1 + 3",
+      "outcome": "values"
     },
     {
       "id": "add--2--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + -1"
+      "filter": "-2 + -1",
+      "outcome": "values"
     },
     {
       "id": "add--2--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + -2"
+      "filter": "-2 + -2",
+      "outcome": "values"
     },
     {
       "id": "add--2--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + -3"
+      "filter": "-2 + -3",
+      "outcome": "values"
     },
     {
       "id": "add--2-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + 0"
+      "filter": "-2 + 0",
+      "outcome": "values"
     },
     {
       "id": "add--2-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + 1"
+      "filter": "-2 + 1",
+      "outcome": "values"
     },
     {
       "id": "add--2-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + 2"
+      "filter": "-2 + 2",
+      "outcome": "values"
     },
     {
       "id": "add--2-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-2 + 3"
+      "filter": "-2 + 3",
+      "outcome": "values"
     },
     {
       "id": "add--3--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + -1"
+      "filter": "-3 + -1",
+      "outcome": "values"
     },
     {
       "id": "add--3--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + -2"
+      "filter": "-3 + -2",
+      "outcome": "values"
     },
     {
       "id": "add--3--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + -3"
+      "filter": "-3 + -3",
+      "outcome": "values"
     },
     {
       "id": "add--3-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + 0"
+      "filter": "-3 + 0",
+      "outcome": "values"
     },
     {
       "id": "add--3-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + 1"
+      "filter": "-3 + 1",
+      "outcome": "values"
     },
     {
       "id": "add--3-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + 2"
+      "filter": "-3 + 2",
+      "outcome": "values"
     },
     {
       "id": "add--3-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-3 + 3"
+      "filter": "-3 + 3",
+      "outcome": "values"
     },
     {
       "id": "add--4--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + -1"
+      "filter": "-4 + -1",
+      "outcome": "values"
     },
     {
       "id": "add--4--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + -2"
+      "filter": "-4 + -2",
+      "outcome": "values"
     },
     {
       "id": "add--4--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + -3"
+      "filter": "-4 + -3",
+      "outcome": "values"
     },
     {
       "id": "add--4-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + 0"
+      "filter": "-4 + 0",
+      "outcome": "values"
     },
     {
       "id": "add--4-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + 1"
+      "filter": "-4 + 1",
+      "outcome": "values"
     },
     {
       "id": "add--4-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + 2"
+      "filter": "-4 + 2",
+      "outcome": "values"
     },
     {
       "id": "add--4-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "-4 + 3"
+      "filter": "-4 + 3",
+      "outcome": "values"
     },
     {
       "id": "add-0--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + -1"
+      "filter": "0 + -1",
+      "outcome": "values"
     },
     {
       "id": "add-0--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + -2"
+      "filter": "0 + -2",
+      "outcome": "values"
     },
     {
       "id": "add-0--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + -3"
+      "filter": "0 + -3",
+      "outcome": "values"
     },
     {
       "id": "add-0-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + 0"
+      "filter": "0 + 0",
+      "outcome": "values"
     },
     {
       "id": "add-0-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + 1"
+      "filter": "0 + 1",
+      "outcome": "values"
     },
     {
       "id": "add-0-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + 2"
+      "filter": "0 + 2",
+      "outcome": "values"
     },
     {
       "id": "add-0-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "0 + 3"
+      "filter": "0 + 3",
+      "outcome": "values"
     },
     {
       "id": "add-1--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + -1"
+      "filter": "1 + -1",
+      "outcome": "values"
     },
     {
       "id": "add-1--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + -2"
+      "filter": "1 + -2",
+      "outcome": "values"
     },
     {
       "id": "add-1--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + -3"
+      "filter": "1 + -3",
+      "outcome": "values"
     },
     {
       "id": "add-1-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + 0"
+      "filter": "1 + 0",
+      "outcome": "values"
     },
     {
       "id": "add-1-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + 1"
+      "filter": "1 + 1",
+      "outcome": "values"
     },
     {
       "id": "add-1-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + 2"
+      "filter": "1 + 2",
+      "outcome": "values"
     },
     {
       "id": "add-1-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "1 + 3"
+      "filter": "1 + 3",
+      "outcome": "values"
     },
     {
       "id": "add-2--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + -1"
+      "filter": "2 + -1",
+      "outcome": "values"
     },
     {
       "id": "add-2--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + -2"
+      "filter": "2 + -2",
+      "outcome": "values"
     },
     {
       "id": "add-2--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + -3"
+      "filter": "2 + -3",
+      "outcome": "values"
     },
     {
       "id": "add-2-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + 0"
+      "filter": "2 + 0",
+      "outcome": "values"
     },
     {
       "id": "add-2-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + 1"
+      "filter": "2 + 1",
+      "outcome": "values"
     },
     {
       "id": "add-2-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + 2"
+      "filter": "2 + 2",
+      "outcome": "values"
     },
     {
       "id": "add-2-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "2 + 3"
+      "filter": "2 + 3",
+      "outcome": "values"
     },
     {
       "id": "add-3--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + -1"
+      "filter": "3 + -1",
+      "outcome": "values"
     },
     {
       "id": "add-3--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + -2"
+      "filter": "3 + -2",
+      "outcome": "values"
     },
     {
       "id": "add-3--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + -3"
+      "filter": "3 + -3",
+      "outcome": "values"
     },
     {
       "id": "add-3-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + 0"
+      "filter": "3 + 0",
+      "outcome": "values"
     },
     {
       "id": "add-3-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + 1"
+      "filter": "3 + 1",
+      "outcome": "values"
     },
     {
       "id": "add-3-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + 2"
+      "filter": "3 + 2",
+      "outcome": "values"
     },
     {
       "id": "add-3-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "3 + 3"
+      "filter": "3 + 3",
+      "outcome": "values"
     },
     {
       "id": "add-4--1",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + -1"
+      "filter": "4 + -1",
+      "outcome": "values"
     },
     {
       "id": "add-4--2",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + -2"
+      "filter": "4 + -2",
+      "outcome": "values"
     },
     {
       "id": "add-4--3",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + -3"
+      "filter": "4 + -3",
+      "outcome": "values"
     },
     {
       "id": "add-4-0",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + 0"
+      "filter": "4 + 0",
+      "outcome": "values"
     },
     {
       "id": "add-4-1",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + 1"
+      "filter": "4 + 1",
+      "outcome": "values"
     },
     {
       "id": "add-4-2",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + 2"
+      "filter": "4 + 2",
+      "outcome": "values"
     },
     {
       "id": "add-4-3",
       "category": "arithmetic",
       "input": null,
-      "filter": "4 + 3"
+      "filter": "4 + 3",
+      "outcome": "values"
     },
     {
       "id": "alternative",
       "category": "operators",
       "input": null,
-      "filter": "false // 9, null // 8, 0 // 7"
+      "filter": "false // 9, null // 8, 0 // 7",
+      "outcome": "values"
     },
     {
       "id": "array-slice",
@@ -395,397 +459,463 @@
         2,
         3
       ],
-      "filter": ".[1:-1]"
+      "filter": ".[1:-1]",
+      "outcome": "values"
     },
     {
       "id": "base64",
       "category": "formats",
       "input": "jq",
-      "filter": "@base64"
+      "filter": "@base64",
+      "outcome": "values"
     },
     {
       "id": "boolean",
       "category": "operators",
       "input": null,
-      "filter": "3 > 2 and 1 != 0"
+      "filter": "3 > 2 and 1 != 0",
+      "outcome": "values"
     },
     {
       "id": "compare--1--1",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < -1, -1 == -1, -1 >= -1]"
+      "filter": "[-1 < -1, -1 == -1, -1 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare--1--2",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < -2, -1 == -2, -1 >= -2]"
+      "filter": "[-1 < -2, -1 == -2, -1 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare--1--3",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < -3, -1 == -3, -1 >= -3]"
+      "filter": "[-1 < -3, -1 == -3, -1 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare--1-0",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < 0, -1 == 0, -1 >= 0]"
+      "filter": "[-1 < 0, -1 == 0, -1 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare--1-1",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < 1, -1 == 1, -1 >= 1]"
+      "filter": "[-1 < 1, -1 == 1, -1 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare--1-2",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < 2, -1 == 2, -1 >= 2]"
+      "filter": "[-1 < 2, -1 == 2, -1 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare--1-3",
       "category": "comparison",
       "input": null,
-      "filter": "[-1 < 3, -1 == 3, -1 >= 3]"
+      "filter": "[-1 < 3, -1 == 3, -1 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare--2--1",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < -1, -2 == -1, -2 >= -1]"
+      "filter": "[-2 < -1, -2 == -1, -2 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare--2--2",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < -2, -2 == -2, -2 >= -2]"
+      "filter": "[-2 < -2, -2 == -2, -2 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare--2--3",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < -3, -2 == -3, -2 >= -3]"
+      "filter": "[-2 < -3, -2 == -3, -2 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare--2-0",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < 0, -2 == 0, -2 >= 0]"
+      "filter": "[-2 < 0, -2 == 0, -2 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare--2-1",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < 1, -2 == 1, -2 >= 1]"
+      "filter": "[-2 < 1, -2 == 1, -2 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare--2-2",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < 2, -2 == 2, -2 >= 2]"
+      "filter": "[-2 < 2, -2 == 2, -2 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare--2-3",
       "category": "comparison",
       "input": null,
-      "filter": "[-2 < 3, -2 == 3, -2 >= 3]"
+      "filter": "[-2 < 3, -2 == 3, -2 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare--3--1",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < -1, -3 == -1, -3 >= -1]"
+      "filter": "[-3 < -1, -3 == -1, -3 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare--3--2",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < -2, -3 == -2, -3 >= -2]"
+      "filter": "[-3 < -2, -3 == -2, -3 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare--3--3",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < -3, -3 == -3, -3 >= -3]"
+      "filter": "[-3 < -3, -3 == -3, -3 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare--3-0",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < 0, -3 == 0, -3 >= 0]"
+      "filter": "[-3 < 0, -3 == 0, -3 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare--3-1",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < 1, -3 == 1, -3 >= 1]"
+      "filter": "[-3 < 1, -3 == 1, -3 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare--3-2",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < 2, -3 == 2, -3 >= 2]"
+      "filter": "[-3 < 2, -3 == 2, -3 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare--3-3",
       "category": "comparison",
       "input": null,
-      "filter": "[-3 < 3, -3 == 3, -3 >= 3]"
+      "filter": "[-3 < 3, -3 == 3, -3 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare--4--1",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < -1, -4 == -1, -4 >= -1]"
+      "filter": "[-4 < -1, -4 == -1, -4 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare--4--2",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < -2, -4 == -2, -4 >= -2]"
+      "filter": "[-4 < -2, -4 == -2, -4 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare--4--3",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < -3, -4 == -3, -4 >= -3]"
+      "filter": "[-4 < -3, -4 == -3, -4 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare--4-0",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < 0, -4 == 0, -4 >= 0]"
+      "filter": "[-4 < 0, -4 == 0, -4 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare--4-1",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < 1, -4 == 1, -4 >= 1]"
+      "filter": "[-4 < 1, -4 == 1, -4 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare--4-2",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < 2, -4 == 2, -4 >= 2]"
+      "filter": "[-4 < 2, -4 == 2, -4 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare--4-3",
       "category": "comparison",
       "input": null,
-      "filter": "[-4 < 3, -4 == 3, -4 >= 3]"
+      "filter": "[-4 < 3, -4 == 3, -4 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare-0--1",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < -1, 0 == -1, 0 >= -1]"
+      "filter": "[0 < -1, 0 == -1, 0 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare-0--2",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < -2, 0 == -2, 0 >= -2]"
+      "filter": "[0 < -2, 0 == -2, 0 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare-0--3",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < -3, 0 == -3, 0 >= -3]"
+      "filter": "[0 < -3, 0 == -3, 0 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare-0-0",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < 0, 0 == 0, 0 >= 0]"
+      "filter": "[0 < 0, 0 == 0, 0 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare-0-1",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < 1, 0 == 1, 0 >= 1]"
+      "filter": "[0 < 1, 0 == 1, 0 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare-0-2",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < 2, 0 == 2, 0 >= 2]"
+      "filter": "[0 < 2, 0 == 2, 0 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare-0-3",
       "category": "comparison",
       "input": null,
-      "filter": "[0 < 3, 0 == 3, 0 >= 3]"
+      "filter": "[0 < 3, 0 == 3, 0 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare-1--1",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < -1, 1 == -1, 1 >= -1]"
+      "filter": "[1 < -1, 1 == -1, 1 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare-1--2",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < -2, 1 == -2, 1 >= -2]"
+      "filter": "[1 < -2, 1 == -2, 1 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare-1--3",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < -3, 1 == -3, 1 >= -3]"
+      "filter": "[1 < -3, 1 == -3, 1 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare-1-0",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < 0, 1 == 0, 1 >= 0]"
+      "filter": "[1 < 0, 1 == 0, 1 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare-1-1",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < 1, 1 == 1, 1 >= 1]"
+      "filter": "[1 < 1, 1 == 1, 1 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare-1-2",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < 2, 1 == 2, 1 >= 2]"
+      "filter": "[1 < 2, 1 == 2, 1 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare-1-3",
       "category": "comparison",
       "input": null,
-      "filter": "[1 < 3, 1 == 3, 1 >= 3]"
+      "filter": "[1 < 3, 1 == 3, 1 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare-2--1",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < -1, 2 == -1, 2 >= -1]"
+      "filter": "[2 < -1, 2 == -1, 2 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare-2--2",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < -2, 2 == -2, 2 >= -2]"
+      "filter": "[2 < -2, 2 == -2, 2 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare-2--3",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < -3, 2 == -3, 2 >= -3]"
+      "filter": "[2 < -3, 2 == -3, 2 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare-2-0",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < 0, 2 == 0, 2 >= 0]"
+      "filter": "[2 < 0, 2 == 0, 2 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare-2-1",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < 1, 2 == 1, 2 >= 1]"
+      "filter": "[2 < 1, 2 == 1, 2 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare-2-2",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < 2, 2 == 2, 2 >= 2]"
+      "filter": "[2 < 2, 2 == 2, 2 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare-2-3",
       "category": "comparison",
       "input": null,
-      "filter": "[2 < 3, 2 == 3, 2 >= 3]"
+      "filter": "[2 < 3, 2 == 3, 2 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare-3--1",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < -1, 3 == -1, 3 >= -1]"
+      "filter": "[3 < -1, 3 == -1, 3 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare-3--2",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < -2, 3 == -2, 3 >= -2]"
+      "filter": "[3 < -2, 3 == -2, 3 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare-3--3",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < -3, 3 == -3, 3 >= -3]"
+      "filter": "[3 < -3, 3 == -3, 3 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare-3-0",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < 0, 3 == 0, 3 >= 0]"
+      "filter": "[3 < 0, 3 == 0, 3 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare-3-1",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < 1, 3 == 1, 3 >= 1]"
+      "filter": "[3 < 1, 3 == 1, 3 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare-3-2",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < 2, 3 == 2, 3 >= 2]"
+      "filter": "[3 < 2, 3 == 2, 3 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare-3-3",
       "category": "comparison",
       "input": null,
-      "filter": "[3 < 3, 3 == 3, 3 >= 3]"
+      "filter": "[3 < 3, 3 == 3, 3 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "compare-4--1",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < -1, 4 == -1, 4 >= -1]"
+      "filter": "[4 < -1, 4 == -1, 4 >= -1]",
+      "outcome": "values"
     },
     {
       "id": "compare-4--2",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < -2, 4 == -2, 4 >= -2]"
+      "filter": "[4 < -2, 4 == -2, 4 >= -2]",
+      "outcome": "values"
     },
     {
       "id": "compare-4--3",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < -3, 4 == -3, 4 >= -3]"
+      "filter": "[4 < -3, 4 == -3, 4 >= -3]",
+      "outcome": "values"
     },
     {
       "id": "compare-4-0",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < 0, 4 == 0, 4 >= 0]"
+      "filter": "[4 < 0, 4 == 0, 4 >= 0]",
+      "outcome": "values"
     },
     {
       "id": "compare-4-1",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < 1, 4 == 1, 4 >= 1]"
+      "filter": "[4 < 1, 4 == 1, 4 >= 1]",
+      "outcome": "values"
     },
     {
       "id": "compare-4-2",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < 2, 4 == 2, 4 >= 2]"
+      "filter": "[4 < 2, 4 == 2, 4 >= 2]",
+      "outcome": "values"
     },
     {
       "id": "compare-4-3",
       "category": "comparison",
       "input": null,
-      "filter": "[4 < 3, 4 == 3, 4 >= 3]"
+      "filter": "[4 < 3, 4 == 3, 4 >= 3]",
+      "outcome": "values"
     },
     {
       "id": "conditional",
@@ -793,7 +923,8 @@
       "input": {
         "score": 85
       },
-      "filter": "if .score >= 90 then \"A\" elif .score >= 80 then \"B\" else \"C\" end"
+      "filter": "if .score >= 90 then \"A\" elif .score >= 80 then \"B\" else \"C\" end",
+      "outcome": "values"
     },
     {
       "id": "construct-array",
@@ -802,7 +933,8 @@
         "a": 2,
         "b": 3
       },
-      "filter": "[.a, .b, (.a + .b), (.a * .b)]"
+      "filter": "[.a, .b, (.a + .b), (.a * .b)]",
+      "outcome": "values"
     },
     {
       "id": "containment",
@@ -813,7 +945,8 @@
           2
         ]
       },
-      "filter": "contains({a: [2]})"
+      "filter": "contains({a: [2]})",
+      "outcome": "values"
     },
     {
       "id": "delete",
@@ -822,7 +955,80 @@
         "a": 1,
         "secret": true
       },
-      "filter": "del(.secret)"
+      "filter": "del(.secret)",
+      "outcome": "values"
+    },
+    {
+      "id": "error-division-zero",
+      "category": "errors",
+      "input": null,
+      "filter": "1 / 0",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-explicit",
+      "category": "errors",
+      "input": null,
+      "filter": "error(\"boom\")",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-fromjson",
+      "category": "errors",
+      "input": "not json",
+      "filter": "fromjson",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-invalid-regex",
+      "category": "errors",
+      "input": "abc",
+      "filter": "test(\"[\")",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-iterate-number",
+      "category": "errors",
+      "input": 1,
+      "filter": ".[]",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-keys-boolean",
+      "category": "errors",
+      "input": false,
+      "filter": "keys",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-length-boolean",
+      "category": "errors",
+      "input": true,
+      "filter": "length",
+      "outcome": "error",
+      "phase": "evaluation"
+    },
+    {
+      "id": "error-parse",
+      "category": "errors",
+      "input": null,
+      "filter": ". +",
+      "outcome": "error",
+      "phase": "compilation"
+    },
+    {
+      "id": "error-undefined-variable",
+      "category": "errors",
+      "input": null,
+      "filter": "$missing",
+      "outcome": "error",
+      "phase": "evaluation"
     },
     {
       "id": "field-chain",
@@ -837,7 +1043,8 @@
           }
         ]
       },
-      "filter": ".users[].name"
+      "filter": ".users[].name",
+      "outcome": "values"
     },
     {
       "id": "flatten",
@@ -851,7 +1058,17 @@
           ]
         ]
       ],
-      "filter": "flatten, flatten(1)"
+      "filter": "flatten, flatten(1)",
+      "outcome": "values"
+    },
+    {
+      "id": "flatten-object-values",
+      "category": "collections",
+      "input": {
+        "a": 1
+      },
+      "filter": "flatten",
+      "outcome": "values"
     },
     {
       "id": "foreach",
@@ -861,7 +1078,8 @@
         2,
         3
       ],
-      "filter": "foreach .[] as $value (0; . + $value)"
+      "filter": "foreach .[] as $value (0; . + $value)",
+      "outcome": "values"
     },
     {
       "id": "formats",
@@ -869,13 +1087,15 @@
       "input": {
         "a": 1
       },
-      "filter": "@json"
+      "filter": "@json",
+      "outcome": "values"
     },
     {
       "id": "fromjson",
       "category": "formats",
       "input": "[1,true]",
-      "filter": "fromjson"
+      "filter": "fromjson",
+      "outcome": "values"
     },
     {
       "id": "identity",
@@ -883,7 +1103,8 @@
       "input": {
         "a": 1
       },
-      "filter": "."
+      "filter": ".",
+      "outcome": "values"
     },
     {
       "id": "index--1",
@@ -893,7 +1114,8 @@
         "b",
         "c"
       ],
-      "filter": ".[-1]"
+      "filter": ".[-1]",
+      "outcome": "values"
     },
     {
       "id": "index--2",
@@ -903,7 +1125,8 @@
         "b",
         "c"
       ],
-      "filter": ".[-2]"
+      "filter": ".[-2]",
+      "outcome": "values"
     },
     {
       "id": "index--3",
@@ -913,7 +1136,8 @@
         "b",
         "c"
       ],
-      "filter": ".[-3]"
+      "filter": ".[-3]",
+      "outcome": "values"
     },
     {
       "id": "index--4",
@@ -923,7 +1147,8 @@
         "b",
         "c"
       ],
-      "filter": ".[-4]"
+      "filter": ".[-4]",
+      "outcome": "values"
     },
     {
       "id": "index--5",
@@ -933,7 +1158,8 @@
         "b",
         "c"
       ],
-      "filter": ".[-5]"
+      "filter": ".[-5]",
+      "outcome": "values"
     },
     {
       "id": "index-0",
@@ -943,7 +1169,8 @@
         "b",
         "c"
       ],
-      "filter": ".[0]"
+      "filter": ".[0]",
+      "outcome": "values"
     },
     {
       "id": "index-1",
@@ -953,7 +1180,8 @@
         "b",
         "c"
       ],
-      "filter": ".[1]"
+      "filter": ".[1]",
+      "outcome": "values"
     },
     {
       "id": "index-2",
@@ -963,7 +1191,8 @@
         "b",
         "c"
       ],
-      "filter": ".[2]"
+      "filter": ".[2]",
+      "outcome": "values"
     },
     {
       "id": "index-3",
@@ -973,7 +1202,8 @@
         "b",
         "c"
       ],
-      "filter": ".[3]"
+      "filter": ".[3]",
+      "outcome": "values"
     },
     {
       "id": "index-4",
@@ -983,7 +1213,8 @@
         "b",
         "c"
       ],
-      "filter": ".[4]"
+      "filter": ".[4]",
+      "outcome": "values"
     },
     {
       "id": "index-5",
@@ -993,7 +1224,8 @@
         "b",
         "c"
       ],
-      "filter": ".[5]"
+      "filter": ".[5]",
+      "outcome": "values"
     },
     {
       "id": "interpolation",
@@ -1002,7 +1234,8 @@
         "name": "Ada",
         "score": 9
       },
-      "filter": "\"\\(.name): \\(.score)\""
+      "filter": "\"\\(.name): \\(.score)\"",
+      "outcome": "values"
     },
     {
       "id": "length-array",
@@ -1012,19 +1245,22 @@
         2,
         3
       ],
-      "filter": "length"
+      "filter": "length",
+      "outcome": "values"
     },
     {
       "id": "length-null",
       "category": "types",
       "input": null,
-      "filter": "length"
+      "filter": "length",
+      "outcome": "values"
     },
     {
       "id": "length-number",
       "category": "types",
       "input": -7,
-      "filter": "length"
+      "filter": "length",
+      "outcome": "values"
     },
     {
       "id": "length-object",
@@ -1033,13 +1269,15 @@
         "a": 1,
         "b": 2
       },
-      "filter": "length"
+      "filter": "length",
+      "outcome": "values"
     },
     {
       "id": "length-string",
       "category": "types",
       "input": "αβ",
-      "filter": "length"
+      "filter": "length",
+      "outcome": "values"
     },
     {
       "id": "map-select",
@@ -1050,7 +1288,8 @@
         3,
         4
       ],
-      "filter": "map(select(. > 2) | . * 10)"
+      "filter": "map(select(. > 2) | . * 10)",
+      "outcome": "values"
     },
     {
       "id": "missing-field",
@@ -1058,7 +1297,8 @@
       "input": {
         "a": 1
       },
-      "filter": ".missing"
+      "filter": ".missing",
+      "outcome": "values"
     },
     {
       "id": "nested-update",
@@ -1069,7 +1309,8 @@
           "b": 2
         }
       },
-      "filter": ".nested.b += 3"
+      "filter": ".nested.b += 3",
+      "outcome": "values"
     },
     {
       "id": "paths",
@@ -1079,7 +1320,8 @@
           "b": 2
         }
       },
-      "filter": "getpath([\"a\",\"b\"]), setpath([\"a\",\"c\"]; 3)"
+      "filter": "getpath([\"a\",\"b\"]), setpath([\"a\",\"c\"]; 3)",
+      "outcome": "values"
     },
     {
       "id": "reduce",
@@ -1090,13 +1332,15 @@
         3,
         4
       ],
-      "filter": "reduce .[] as $value (0; . + $value)"
+      "filter": "reduce .[] as $value (0; . + $value)",
+      "outcome": "values"
     },
     {
       "id": "regex",
       "category": "regex",
       "input": "Blue Star 1",
-      "filter": "test(\"star\"; \"i\"), gsub(\" \"; \"-\")"
+      "filter": "test(\"star\"; \"i\"), gsub(\" \"; \"-\")",
+      "outcome": "values"
     },
     {
       "id": "sorting",
@@ -1107,19 +1351,22 @@
         3,
         2
       ],
-      "filter": "sort, unique, min, max, add"
+      "filter": "sort, unique, min, max, add",
+      "outcome": "values"
     },
     {
       "id": "text",
       "category": "strings",
       "input": "Blue Star 1",
-      "filter": "split(\" \"), startswith(\"Blue\"), endswith(\"1\")"
+      "filter": "split(\" \"), startswith(\"Blue\"), endswith(\"1\")",
+      "outcome": "values"
     },
     {
       "id": "type-array-164",
       "category": "types",
       "input": [],
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-array-166",
@@ -1128,37 +1375,182 @@
         1,
         2
       ],
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-boolean-161",
       "category": "types",
       "input": false,
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-null-160",
       "category": "types",
       "input": null,
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-number-162",
       "category": "types",
       "input": 0,
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-object-165",
       "category": "types",
       "input": {},
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
     },
     {
       "id": "type-string-163",
       "category": "types",
       "input": "",
-      "filter": "type"
+      "filter": "type",
+      "outcome": "values"
+    }
+  ],
+  "cli_cases": [
+    {
+      "id": "cli-compact",
+      "category": "output",
+      "args": [
+        "-c",
+        "."
+      ],
+      "stdin": "{\"a\":[1,2]}"
+    },
+    {
+      "id": "cli-raw-output",
+      "category": "output",
+      "args": [
+        "-r",
+        ".name"
+      ],
+      "stdin": "{\"name\":\"Ada\"}"
+    },
+    {
+      "id": "cli-json-stream",
+      "category": "input",
+      "args": [
+        "-c",
+        "."
+      ],
+      "stdin": "1\n2\nfalse\n"
+    },
+    {
+      "id": "cli-slurp",
+      "category": "input",
+      "args": [
+        "-s",
+        "-c",
+        "."
+      ],
+      "stdin": "1\n2\n3\n"
+    },
+    {
+      "id": "cli-raw-lines",
+      "category": "input",
+      "args": [
+        "-R",
+        "-c",
+        "."
+      ],
+      "stdin": "one\r\ntwo\r\n"
+    },
+    {
+      "id": "cli-raw-slurp",
+      "category": "input",
+      "args": [
+        "-R",
+        "-s",
+        "-c",
+        "."
+      ],
+      "stdin": "one\ntwo\n"
+    },
+    {
+      "id": "cli-null-input",
+      "category": "input",
+      "args": [
+        "-n",
+        "-c",
+        "{answer: 42}"
+      ],
+      "stdin": ""
+    },
+    {
+      "id": "cli-arg",
+      "category": "variables",
+      "args": [
+        "-n",
+        "-c",
+        "--arg",
+        "name",
+        "Ada",
+        "$name"
+      ],
+      "stdin": ""
+    },
+    {
+      "id": "cli-argjson",
+      "category": "variables",
+      "args": [
+        "-n",
+        "-c",
+        "--argjson",
+        "n",
+        "42",
+        "$n + 1"
+      ],
+      "stdin": ""
+    },
+    {
+      "id": "cli-exit-true",
+      "category": "exit-status",
+      "args": [
+        "-e",
+        ".ok"
+      ],
+      "stdin": "{\"ok\":true}"
+    },
+    {
+      "id": "cli-exit-false",
+      "category": "exit-status",
+      "args": [
+        "-e",
+        ".ok"
+      ],
+      "stdin": "{\"ok\":false}"
+    },
+    {
+      "id": "cli-exit-empty",
+      "category": "exit-status",
+      "args": [
+        "-e",
+        "empty"
+      ],
+      "stdin": "null"
+    },
+    {
+      "id": "cli-invalid-json",
+      "category": "errors",
+      "args": [
+        "."
+      ],
+      "stdin": "{"
+    },
+    {
+      "id": "cli-runtime-error",
+      "category": "errors",
+      "args": [
+        ".[]"
+      ],
+      "stdin": "1"
     }
   ]
 }

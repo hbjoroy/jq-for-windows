@@ -296,7 +296,16 @@ pub(super) fn deduplicate(mut items: Vec<Value>) -> Vec<Value> {
 }
 
 pub(super) fn flatten(input: &Value, depth: usize) -> Result<Value, EvalError> {
-    let items = array_items(input, "flatten")?;
+    let items = match input {
+        Value::Array(items) => items.iter().collect::<Vec<_>>(),
+        Value::Object(object) => object.values().collect::<Vec<_>>(),
+        _ => {
+            return Err(EvalError::InvalidBuiltin {
+                name: "flatten",
+                input: type_name(input),
+            });
+        }
+    };
     let mut output = Vec::new();
     for item in items {
         if depth > 0 && item.is_array() {
@@ -308,7 +317,7 @@ pub(super) fn flatten(input: &Value, depth: usize) -> Result<Value, EvalError> {
             };
             output.extend(flattened);
         } else {
-            output.push(item.clone());
+            output.push((*item).clone());
         }
     }
     Ok(Value::Array(output))

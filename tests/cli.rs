@@ -11,6 +11,7 @@ fn run_with_input(arguments: &[&str], input: &str) -> std::process::Output {
         .args(arguments)
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
         .spawn()
         .unwrap();
     child
@@ -69,4 +70,75 @@ fn exit_status_distinguishes_false_and_empty_streams() {
 
     let empty_output = run_with_input(&["-e", ".missing | empty"], "{}");
     assert_eq!(empty_output.status.code(), Some(4));
+}
+
+#[test]
+fn invalid_json_uses_runtime_error_status() {
+    let output = run_with_input(&["."], "{");
+    assert_eq!(output.status.code(), Some(5));
+    assert!(!output.stderr.is_empty());
+}
+
+#[test]
+fn generated_cli_corpus_matches_reference_jq_when_available() {
+    let reference = std::env::var("JQ_REFERENCE").unwrap_or_else(|_| "jq".to_owned());
+    let Ok(version) = Command::new(&reference).arg("--version").output() else {
+        eprintln!("skipping differential CLI corpus: set JQ_REFERENCE to upstream jq");
+        return;
+    };
+    if String::from_utf8_lossy(&version.stdout).contains("jq-for-windows") {
+        return;
+    }
+    let corpus: serde_json::Value =
+        serde_json::from_str(include_str!("../corpus/cases.json")).unwrap();
+    for case in corpus["cli_cases"].as_array().unwrap() {
+        let id = case["id"].as_str().unwrap();
+        let args = case["args"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|arg| arg.as_str().unwrap())
+            .collect::<Vec<_>>();
+        let stdin = case["stdin"].as_str().unwrap();
+        let ours = run_command(jq(), &args, stdin);
+        let reference = run_command(Command::new(&reference), &args, stdin);
+        assert_eq!(
+            ours.status.code(),
+            reference.status.code(),
+            "exit status mismatch for {id}"
+        );
+        assert_eq!(
+            normalize_newlines(&ours.stdout),
+            normalize_newlines(&reference.stdout),
+            "stdout mismatch for {id}"
+        );
+        assert_eq!(
+            ours.stderr.is_empty(),
+            reference.stderr.is_empty(),
+            "stderr presence mismatch for {id}"
+        );
+    }
+}
+
+fn normalize_newlines(bytes: &[u8]) -> Vec<u8> {
+    String::from_utf8_lossy(bytes)
+        .replace("\r\n", "\n")
+        .into_bytes()
+}
+
+fn run_command(mut command: Command, arguments: &[&str], input: &str) -> std::process::Output {
+    let mut child = command
+        .args(arguments)
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .unwrap();
+    child
+        .stdin
+        .take()
+        .unwrap()
+        .write_all(input.as_bytes())
+        .unwrap();
+    child.wait_with_output().unwrap()
 }
